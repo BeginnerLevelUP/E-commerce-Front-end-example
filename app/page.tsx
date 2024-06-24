@@ -1,9 +1,18 @@
+import Image from "next/image";
+//Banner Images
 import IphoneImage from "@/public/homePageIcons/Iphone.png"
 import P5 from "@/public/homePageIcons/p5.png"
 import airpodMax from "@/public/homePageIcons/airpodMax.png"
 import visionPro from "@/public/homePageIcons/visionPro.png"
 import macbookAir from "@/public/homePageIcons/macbookAir.png"
-import Image from "next/image";
+//Catergory Nav Icons
+import arrows from "@/public/homePageIcons/Arrows.png"
+import camera from  "@/public/homePageIcons/Cameras.png"
+import watch from  "@/public/homePageIcons/SmartWatches.png"
+import computer from  "@/public/homePageIcons/Computers.png"
+import gaming from  "@/public/homePageIcons/Gaming.png"
+import headphone from  "@/public/homePageIcons/Headphones.png"
+import phone from  "@/public/homePageIcons/Phones.png"
 
 export default function Home() {
   return (
@@ -11,7 +20,7 @@ export default function Home() {
     {/* Container */}
     <div className="w-screen h-screen">
       {/*Banners */}
-      <section className="bg-[#211C24] h-[632px]">
+      <section className="bg-[#211C24]">
         {/*  Banner */}
         <div className="flex justify-evenly">
           {/* Text Div */}
@@ -83,9 +92,40 @@ export default function Home() {
       </section>
 
       {/* Catergory Nav */}
-      <nav>
-        
+      <section className="bg-[#FAFAFA]">
+      <div className="flex justify-between py-12 px-36">
+        <p>Browse By Catergory</p>
+        <Image src={arrows} alt='Navigation Arrows'></Image>
+      </div>
+
+      <nav className="list-none flex  px-36 ">
+        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9 mx-10" >
+          <Image className="mx-3" src={phone} alt="Phone" width={48} height={48}></Image>
+          <p className="text-[24px]">Phones</p>
+        </li>
+        <li className="h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10">
+          <Image className="mx-5" src={watch} alt="watch" width={48} height={48}></Image>
+          <p className="text-[24px]">Watches</p>
+        </li>
+        <li className="h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10">
+          <Image className="mx-5" src={camera} alt='camera' width={48} height={48}></Image>
+          <p className="text-[24px]">Cameras</p>
+        </li>
+        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10 w-fit">
+          <Image className="mx-10" src={headphone} alt="headphone" width={48} height={48}></Image>
+          <p className="text-[24px]">Headphones</p>
+        </li>
+        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10 w-fit">
+          <Image className="mx-10" src={computer} alt="computer" width={48} height={48}></Image>
+          <p className="text-[24px]">Computers</p>
+        </li>
+        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10">
+          <Image className="mx-3" src={gaming} alt="gaming" width={48} height={48}></Image>
+          <p className="text-[24px]">Gaming</p>
+        </li>
       </nav>
+      </section>
+
 
       {/* Results */}
       <section>
