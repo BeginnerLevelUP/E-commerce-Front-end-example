@@ -29,15 +29,20 @@ import appleIpad from "@/public/homePageIcons/featuredIcons/appleIpad.png";
 import favBlank from "@/public/homePageIcons/featuredIcons/favBlank.png";
 import favFull from "@/public/homePageIcons/featuredIcons/favFull.png";
 
+//Feature#2 Images
+import featuredWatches from "@/public/homePageIcons/featuredIcons/featuredWatches.png"
+import featuredIpads from "@/public/homePageIcons/featuredIcons/featuresIpad.png"
+import macbookFront from "@/public/homePageIcons/featuredIcons/macbookFront.png"
+import samsung from "@/public/homePageIcons/featuredIcons/samsungBack&Front.png"
 
 class Product {
   name: string;
   description: string;
-  price: number;
-  hearted: boolean;
-  imgSrc: StaticImageData;
+  price?: number;
+  hearted?: boolean;
+  imgSrc?: StaticImageData;
 
-  constructor(name: string, description: string, price: number, hearted: boolean, imgSrc: any) {
+  constructor(name: string, description: string, price?: number, hearted?: boolean, imgSrc?: StaticImageData) {
     this.name = name;
     this.description = description;
     this.price = price;
@@ -47,7 +52,7 @@ class Product {
 }
 
 // Create instances of the Product class
-const featuredProducts = [
+const featuredProducts:Product[] = [
   new Product("Apple iPhone 14 Pro Max", "128GB Deep Purple", 900, false, Iphone1pro),
   new Product("Blackmagic Pocket Cinema", "Camera 6k", 2535, false, cannonCamera),
   new Product("Apple Watch Series 9 GPS", "128GB Deep Purple", 900, false, appleWatch),
@@ -57,6 +62,33 @@ const featuredProducts = [
   new Product("Galaxy Buds FE", "Graphite", 99.99, false, galaxyBuds),
   new Product("Apple iPad 9 10.2 64GB Wi-Fi", "Silver (MK2L3) 2021", 398, false, appleIpad)
 ];
+
+const featured2Products=[
+  {
+  title:"Popular Products",
+  des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use",
+  imgSrc:featuredWatches,
+  bg:"white"
+  },
+    {
+  title:"Ipad Pro",
+  des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
+  imgSrc:featuredIpads,
+  bg:"#F9F9F9"
+  },
+    {
+  title:"Samsung Galaxy",
+  des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use",
+  imgSrc:samsung,
+  bg:"#EAEAEA"
+  },
+    {
+  title:"Macbook Pro",
+  des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use",
+  imgSrc:macbookFront,
+  bg:"#2C2C2C"
+  }
+]
 
 
 export default function Home() {
@@ -137,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* Catergory Nav */}
-      <section className="bg-[#FAFAFA]">
+      <section className="bg-[#FAFAFA] h-[352px]">
       <div className="flex justify-between py-12 px-36 text-[24px]">
         <p>Browse By Catergory</p>
         <div className="flex">
@@ -199,8 +231,17 @@ export default function Home() {
 
       {/* Promotional */}
       <section>
-        <div>
-
+        <div className="flex justify-center">
+            {
+              featured2Products.map((product,index)=>(
+               <div key={index} className={`bg-[${product.bg}] w-[360px]`}>
+                  <Image src={product.imgSrc} alt='promotional image' width={360} height={366}></Image>
+                  <p className={`text-[33px] ${index==3?"text-white":"text-black"}`}>{product.title}</p>
+                  <p className="text-[14px] text-[#909090] w-[296px] h-[72px] text-center">{product.des}</p>
+                  <button className={`border  rounded-md text-[14px] px-12 py-4 ${index==3?"text-white border-white":"text-black border-black"}`}>Shop Now</button>
+                </div>
+              ))
+            }
         </div>
       </section>
 
