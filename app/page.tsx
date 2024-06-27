@@ -29,12 +29,17 @@ import appleIpad from "@/public/homePageIcons/featuredIcons/appleIpad.png";
 import favBlank from "@/public/homePageIcons/featuredIcons/favBlank.png";
 import favFull from "@/public/homePageIcons/featuredIcons/favFull.png";
 
-//Feature#2 Images
+//Promotional Images
 import featuredWatches from "@/public/homePageIcons/featuredIcons/featuredWatches.png"
 import featuredIpads from "@/public/homePageIcons/featuredIcons/featuresIpad.png"
 import macbookFront from "@/public/homePageIcons/featuredIcons/macbookFront.png"
 import samsung from "@/public/homePageIcons/featuredIcons/samsungBack&Front.png"
 
+//Discounted Images
+import maxBoring from "@/public/homePageIcons/featuredIcons/maxBoring.png"
+import phoneBoring from "@/public/homePageIcons/featuredIcons/phoneBoring.png"
+import phoneGold from "@/public/homePageIcons/featuredIcons/iphoneGold.png"
+import watchBoring from "@/public/homePageIcons/featuredIcons/watchBoring.png"
 class Product {
   name: string;
   description: string;
@@ -63,7 +68,7 @@ const featuredProducts:Product[] = [
   new Product("Apple iPad 9 10.2 64GB Wi-Fi", "Silver (MK2L3) 2021", 398, false, appleIpad)
 ];
 
-const featured2Products=[
+const promotional=[
   {
   title:"Popular Products",
   des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use",
@@ -89,6 +94,13 @@ const featured2Products=[
   bg:"2C2C2C"
   }
 ]
+const discounted:Product[]=[
+  new Product("Apple iPhone 14 Pro 512GB ", "Gold (MQ233)", 1437, false, phoneGold),
+  new Product("AirPods Max Silver ", "Starlight Aluminium", 549, false, maxBoring),
+  new Product("Apple Watch Series 9 GPS ", "41mm Starlight Aluminium ", 399, false, watchBoring),
+  new Product("Apple iPhone 14 Pro", " 1TB Gold (MQ2V3)", 1499, false, phoneBoring),
+]
+
 
 
 export default function Home() {
@@ -219,7 +231,7 @@ export default function Home() {
           {featuredProducts.map((product, index) => (
                 <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-[268px] h-[432px]' key={index}>
                  <Image src={product.hearted ? favFull : favBlank} alt='favorite icon' height={32} width={32} className=""/>
-                  <Image className="mx-auto " src={product.imgSrc} alt={product.name} height={160} width={160} />
+                  <Image className="mx-auto " src={product?.imgSrc} alt={product.name} height={180} width={160} />
                   <p className="text-[16px] text-center">{product.name}</p>
                   <p className="text-[16px] text-center ">{product.description}</p>
                   <p className="text-[24px] font-bold text-center">${product.price}</p>
@@ -231,8 +243,8 @@ export default function Home() {
 
       {/* Promotional */}
       <section>
-          <div className="flex justify-center  min-h-screen">
-            {featured2Products.map((product, index) => (
+          <div className="flex justify-center">
+            {promotional.map((product, index) => (
               <div
                 key={index}
                 style={{ backgroundColor: `#${product.bg}` }}
@@ -266,8 +278,18 @@ export default function Home() {
 
       {/* Discounted */}
       <section>
-        <div>
-
+        <p className=" py-12 px-36 text-[24px]">Discounts up to -50%</p>
+        <div className="grid grid-cols-4 grid-rows-2 gap-2 w-[1120px] mx-auto">
+          {discounted.map((product, index) => (
+                <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-[268px] h-[432px]' key={index}>
+                 <Image src={product.hearted ? favFull : favBlank} alt='favorite icon' height={32} width={32} className=""/>
+                  <Image className="mx-auto " src={product.imgSrc} alt={product.name} height={160} width={160} />
+                  <p className="text-[16px] text-center">{product.name}</p>
+                  <p className="text-[16px] text-center ">{product.description}</p>
+                  <p className="text-[24px] font-bold text-center">${product.price}</p>
+                  <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 w-[188px] mx-auto ">Buy Now</button>
+                </div>
+              ))}
         </div>
       </section>
 
