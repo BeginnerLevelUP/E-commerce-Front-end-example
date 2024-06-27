@@ -56,6 +56,9 @@ class Product {
   }
 }
 
+//Footer Images
+import footerBanner from "@/public/homePageIcons/footerImages/footerbanner.png"
+import socialIcons from  "@/public/homePageIcons/footerImages/SocialIcons.png"
 // Create instances of the Product class
 const featuredProducts:Product[] = [
   new Product("Apple iPhone 14 Pro Max", "128GB Deep Purple", 900, false, Iphone1pro),
@@ -278,7 +281,7 @@ export default function Home() {
 
       {/* Discounted */}
       <section>
-        <p className=" py-12 px-36 text-[24px]">Discounts up to -50%</p>
+        <p className="py-12 px-36 text-[24px]">Discounts up to -50%</p>
         <div className="grid grid-cols-4 grid-rows-2 gap-2 w-[1120px] mx-auto">
           {discounted.map((product, index) => (
                 <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-[268px] h-[432px]' key={index}>
@@ -293,10 +296,59 @@ export default function Home() {
         </div>
       </section>
 
+    
+      <section className="w-screen relative bottom-72">
+      {/* Bottom Banner */}
+      <Image src={footerBanner} alt='footerBanner' className="w-screen"></Image>
       {/* Footer */}
-      <footer>
+      <footer className="bg-black w-screen h-[504px] text-white">
+        {/* Top Half */}
+        <section className="p-24 flex justify-evenly">
+        {/* Left Text */}
+        <div className="flex flex-col">
+          <p className="text-[16px] font-bold mb-6">Company</p>
+          <p className="w-[384px] text-[#CFCFCF]">We are a residential interior design firm located in Portland. Our boutique-studio offers more than</p>
+        </div>
+
+        {/* Middle Text */}
+        <div>
+          <p className="text-[16px] font-bold mb-6">Services</p>
+          <ul className=" text-[#CFCFCF]">
+            <li className="my-4">Bonus program</li>
+            <li className="my-4">Gift cards</li>
+            <li className="my-4">Credit and payment</li>
+            <li className="my-4">Service contracts</li>
+            <li className="my-4">Non-cash account</li>
+            <li className="my-4">Payment</li>
+          </ul>
+        </div>
+        {/* Right Text */}
+        <div>
+          <p className="text-[16px] font-bold mb-6">Assistance to the buyer</p>
+          <ul className="text-[#CFCFCF]">
+            <li className="my-4">Find an order</li>
+            <li className="my-4">Terms of delivery</li>
+            <li className="my-4">Exchange and return of goods</li>
+            <li className="my-4">Guarantee</li>
+            <li className="my-4">Frequently asked questions</li>
+            <li className="my-4">Terms of use of the site</li>
+          </ul>
+        </div>
+        </section>
+
+        {/* Second Half */}
+        <section className="relative bottom-10 left-10">
+            <Image src={socialIcons} alt='social icons'></Image>
+        </section>
 
       </footer>
+      </section>
+
+
+
+
+
+
     </div>
 
   </>
