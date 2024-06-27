@@ -74,19 +74,19 @@ const featured2Products=[
   title:"Ipad Pro",
   des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
   imgSrc:featuredIpads,
-  bg:"#F9F9F9"
+  bg:"F9F9F9"
   },
     {
   title:"Samsung Galaxy",
   des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use",
   imgSrc:samsung,
-  bg:"#EAEAEA"
+  bg:"EAEAEA"
   },
     {
   title:"Macbook Pro",
   des:"iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use",
   imgSrc:macbookFront,
-  bg:"#2C2C2C"
+  bg:"2C2C2C"
   }
 ]
 
@@ -231,18 +231,36 @@ export default function Home() {
 
       {/* Promotional */}
       <section>
-        <div className="flex justify-center">
-            {
-              featured2Products.map((product,index)=>(
-               <div key={index} className={`bg-[${product.bg}] w-[360px]`}>
-                  <Image src={product.imgSrc} alt='promotional image' width={360} height={366}></Image>
-                  <p className={`text-[33px] ${index==3?"text-white":"text-black"}`}>{product.title}</p>
-                  <p className="text-[14px] text-[#909090] w-[296px] h-[72px] text-center">{product.des}</p>
-                  <button className={`border  rounded-md text-[14px] px-12 py-4 ${index==3?"text-white border-white":"text-black border-black"}`}>Shop Now</button>
-                </div>
-              ))
-            }
-        </div>
+          <div className="flex justify-center  min-h-screen">
+            {featured2Products.map((product, index) => (
+              <div
+                key={index}
+                style={{ backgroundColor: `#${product.bg}` }}
+                className=" my-10 flex  flex-col justify-center items-center w-screen h-[640px]" 
+              >
+                <Image
+                  className="mx-auto text-center"
+                  src={product.imgSrc}
+                  alt="promotional image"
+                  width={300}
+                  height={300}
+                />
+                <p className={`text-[33px] ${index == 3 ? "text-white" : "text-black"}`}>
+                  {product.title}
+                </p>
+                <p className="text-[14px] text-[#909090] w-[296px] h-[72px] text-center ">
+                  {product.des}
+                </p>
+                <button
+                  className={`border rounded-md text-[14px] px-12 py-4 mx-auto ${
+                    index == 3 ? "text-white border-white" : "text-black border-black"
+                  }`}
+                >
+                  Shop Now
+                </button>
+              </div>
+            ))}
+          </div>
       </section>
 
 
