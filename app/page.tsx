@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
     {/* Container */}
-    <div className="w-screen h-screen">
+    <div className="lg:w-screen w-[1120px] h-screen">
       {/*Banners */}
       <section className="bg-[#211C24]">
         {/*  Banner */}
-        <div className="flex justify-evenly">
+        <div className="flex lg:flex-row flex-col lg:justify-evenly items-center ">
           {/* Text Div */}
             <div className="flex-col content-center text-[#FFFFFF]">
               {/* Top Text */}
@@ -129,10 +129,8 @@ export default function Home() {
         </div>
 
         {/* Banner #2 */}
-
-
-        <div className="grid grid-cols-7 grid-rows-4 gap-0">
-            <div className="col-span-4 row-span-2 bg-white flex justify-between ">
+        <div className="lg:grid lg:grid-cols-7 lg:grid-rows-4 lg:gap-0 flex flex-col">
+            <div className="lg:col-span-4 lg:row-span-2 bg-white flex flex-col lg:flex-row justify-between ">
               <Image src={P5} alt='Playstation 5'></Image> 
               {/* Text Div */}
               <div className="flex-col my-auto mr-36">
@@ -141,7 +139,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-span-2 row-span-2 col-start-1 row-start-3  bg-[#EDEDED]  flex justify-between">
+            <div className="lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3  bg-[#EDEDED]  flex lg:flex-row flex-col justify-between">
               <Image src={airpodMax} alt='Airpod Max'></Image> 
               {/* Text Div */}
               <div className="flex-col my-auto mr-16">
@@ -154,8 +152,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-span-2 row-span-2 col-start-3 row-start-3   bg-[#353535]  text-white flex justify-between">
-              <Image src={visionPro} alt='Viion Pro'></Image> 
+            <div className="lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3   bg-[#353535]  text-white flex lg:flex-row flex-col justify-between">
+              <Image src={visionPro} alt='Vision Pro'></Image> 
               {/* Text Div */}
               <div className="flex-col my-auto mr-6">
               <ul className="list-none text-[40px] font-thin">
@@ -167,7 +165,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="col-span-3 row-span-4 col-start-5 row-start-1 flex justify-between bg-[#EDEDED] text-black">       
+            <div className="lg:col-span-3 lg:row-span-4 lg:col-start-5 lg:row-start-1 flex lg:flex-row flex-col-reverse justify-between bg-[#EDEDED] text-black">       
             {/* Text Div */}
             <div className="flex-col content-center ml-4">
               {/* Main Text */}
@@ -184,8 +182,8 @@ export default function Home() {
       </section>
 
       {/* Catergory Nav */}
-      <section className="bg-[#FAFAFA] h-[352px]">
-      <div className="flex justify-between py-12 px-36 text-[24px]">
+      <section className="bg-[#FAFAFA] lg:h-[352px] h-fit">
+      <div className="flex justify-between py-6 px-16 my-10 lg:mt-0 lg:py-12 lg:px-36 text-[24px]">
         <p>Browse By Catergory</p>
         <div className="flex">
            <Image className='mx-4' src={arrowLeft} alt='Navigation Arrows' width={24} height={24}></Image>
@@ -193,28 +191,30 @@ export default function Home() {
         </div>
       </div>
 
-      <nav className="list-none flex justify-center">
-        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9 mx-10" >
+      <nav className="list-none lg:flex lg:justify-center grid grid-cols-2 grid-rows-3 gap-6 mb-48 lg:w-screen w-fit mx-auto lg:mx-0">
+        <li className=" h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl  py-8 px-9 lg:mx-10 " >
           <Image className="mx-1" src={phone} alt="Phone" width={48} height={48}></Image>
           <p className="text-[16px]">Phones</p>
         </li>
-        <li className="h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10">
+
+        <li className="h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl flex-col py-8 px-9  lg:mx-10 ">
           <Image className="mx-2" src={watch} alt="watch" width={48} height={48}></Image>
           <p className="text-[16px]">Watches</p>
         </li>
-        <li className="h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10">
+
+        <li className="h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl  py-8 px-9  lg:mx-10 mx-auto row-start-2">
           <Image className="mx-3" src={camera} alt='camera' width={48} height={48}></Image>
           <p className="text-[16px]">Cameras</p>
         </li>
-        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10 w-fit">
+        <li className="h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl flex-col py-8 px-9  lg:mx-10 mx-auto row-start-2">
           <Image className="mx-4" src={headphone} alt="headphone" width={48} height={48}></Image>
           <p className="text-[16px]">Headphones</p>
         </li>
-        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10 w-fit">
+        <li className=" h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl flex-col py-8 px-9  lg:mx-10 mx-auto w-fit row-start-3">
           <Image className="mx-4" src={computer} alt="computer" width={48} height={48}></Image>
           <p className="text-[16px]">Computers</p>
         </li>
-        <li className=" h-[128px] bg-[#EDEDED] rounded-xl flex-col py-8 px-9  mx-10">
+        <li className=" h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl flex-col py-8 px-9  lg:mx-10 mx-auto row-start-3">
           <Image className="mx-2" src={gaming} alt="gaming" width={48} height={48}></Image>
           <p className="text-[16px]">Gaming</p>
         </li>
@@ -223,25 +223,24 @@ export default function Home() {
 
 
       {/* Results */}
-      <section>
-        <nav className="flex list-none  py-12 text-[18px] mx-auto  w-[1120px]">
+      <section className="mt-48">
+        <nav className="flex justify-center list-none  lg:py-12 text-[18px] lg:mx-auto  w-[1120px] my-8">
           <li className="mx-2 border-b-[3px] border-black">New Arrival</li>
           <li className="mx-2 text-[#8B8B8B]" >Bestseller</li>
           <li className="mx-2 text-[#8B8B8B]" >Feature Products</li>
         </nav>
-
-        <div className="grid grid-cols-4 grid-rows-2 gap-2 w-[1120px] mx-auto">
-          {featuredProducts.map((product, index) => (
-                <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-[268px] h-[432px]' key={index}>
-                 <Image src={product.hearted ? favFull : favBlank} alt='favorite icon' height={32} width={32} className=""/>
-                  <Image className="mx-auto " src={product?.imgSrc} alt={product.name} height={180} width={160} />
-                  <p className="text-[16px] text-center">{product.name}</p>
-                  <p className="text-[16px] text-center ">{product.description}</p>
-                  <p className="text-[24px] font-bold text-center">${product.price}</p>
-                  <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 w-[188px] mx-auto ">Buy Now</button>
-                </div>
-              ))}
-        </div>
+<div className="grid lg:grid-cols-4 grid-cols-2 gap-4 mx-auto w-full max-w-[1120px] p-4">
+  {featuredProducts.map((product, index) => (
+    <div className="bg-[#F6F6F6] flex flex-col p-6 rounded-md shadow-lg" key={index}>
+      <Image src={product.hearted ? favFull : favBlank} alt="favorite icon" height={32} width={32} className="self-end mb-2" />
+      <Image className="mx-auto mb-4" src={product?.imgSrc} alt={product.name} height={180} width={160} />
+      <p className="text-[16px] text-center mb-2">{product.name}</p>
+      <p className="text-[16px] text-center mb-2">{product.description}</p>
+      <p className="text-[24px] font-bold text-center mb-4">${product.price}</p>
+      <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 mx-auto">Buy Now</button>
+    </div>
+  ))}
+</div>
       </section>
 
       {/* Promotional */}
@@ -251,14 +250,14 @@ export default function Home() {
               <div
                 key={index}
                 style={{ backgroundColor: `#${product.bg}` }}
-                className=" my-10 flex  flex-col justify-center items-center w-screen h-[640px]" 
+                className= {`my-10 flex lg:flex-col justify-center items-center lg:w-screen w-full h-[640px] ${index===1 ? "flex-col" : "hidden"}`}
               >
                 <Image
                   className="mx-auto text-center"
                   src={product.imgSrc}
                   alt="promotional image"
-                  width={300}
-                  height={300}
+                  width={400}
+                  height={400}
                 />
                 <p className={`text-[33px] ${index == 3 ? "text-white" : "text-black"}`}>
                   {product.title}
@@ -281,10 +280,10 @@ export default function Home() {
 
       {/* Discounted */}
       <section>
-        <p className="py-12 px-36 text-[24px]">Discounts up to -50%</p>
-        <div className="grid grid-cols-4 grid-rows-2 gap-2 w-[1120px] mx-auto">
+        <p className=" m-8 text-[24px]">Discounts up to -50%</p>
+        <div className="grid lg:grid-cols-4 lg:grid-rows-2 gap-4 w-[1120px] mx-auto grid-cols-2 grid-rows-2 ">
           {discounted.map((product, index) => (
-                <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-[268px] h-[432px]' key={index}>
+                <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-full h-fit' key={index}>
                  <Image src={product.hearted ? favFull : favBlank} alt='favorite icon' height={32} width={32} className=""/>
                   <Image className="mx-auto " src={product.imgSrc} alt={product.name} height={160} width={160} />
                   <p className="text-[16px] text-center">{product.name}</p>
@@ -297,13 +296,13 @@ export default function Home() {
       </section>
 
     
-      <section className="w-screen relative bottom-72">
+      <section className="lg:w-screen w-[1120px] mt-10 lg:mt-0 lg:relative lg:bottom-72">
       {/* Bottom Banner */}
-      <Image src={footerBanner} alt='footerBanner' className="w-screen"></Image>
+      <Image src={footerBanner} alt='footerBanner' className=""></Image>
       {/* Footer */}
-      <footer className="bg-black w-screen h-[504px] text-white">
+      <footer className="bg-black text-white">
         {/* Top Half */}
-        <section className="p-24 flex justify-evenly">
+        <section className="lg:p-24 p-6 flex lg:flex-row flex-col justify-center lg:justify-evenly items-center">
         {/* Left Text */}
         <div className="flex flex-col">
           <p className="text-[16px] font-bold mb-6">Company</p>
@@ -322,6 +321,7 @@ export default function Home() {
             <li className="my-4">Payment</li>
           </ul>
         </div>
+
         {/* Right Text */}
         <div>
           <p className="text-[16px] font-bold mb-6">Assistance to the buyer</p>
@@ -337,8 +337,8 @@ export default function Home() {
         </section>
 
         {/* Second Half */}
-        <section className="relative bottom-10 left-10">
-            <Image src={socialIcons} alt='social icons'></Image>
+        <section className="lg:relative lg:bottom-10 lg:left-10 flex justify-center">
+            <Image src={socialIcons} alt='social icons' width={200} height={200}></Image>
         </section>
 
       </footer>
