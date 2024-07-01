@@ -40,6 +40,12 @@ import maxBoring from "@/public/homePageIcons/featuredIcons/maxBoring.png"
 import phoneBoring from "@/public/homePageIcons/featuredIcons/phoneBoring.png"
 import phoneGold from "@/public/homePageIcons/featuredIcons/iphoneGold.png"
 import watchBoring from "@/public/homePageIcons/featuredIcons/watchBoring.png"
+
+//Mobile Responsive
+import phoneMac from "@/public/mobileResponsive/phoneMac.png"
+import phoneMax from "@/public/mobileResponsive/phoneAirmax.png"
+import phoneVision from "@/public/mobileResponsive/phoneVision.png"
+import pagination from "@/public/mobileResponsive/paginationpng.png"
 class Product {
   name: string;
   description: string;
@@ -129,8 +135,8 @@ export default function Home() {
         </div>
 
         {/* Banner #2 */}
-        <div className="lg:grid lg:grid-cols-7 lg:grid-rows-4 lg:gap-0 flex flex-col">
-            <div className="lg:col-span-4 lg:row-span-2 bg-white flex flex-col lg:flex-row justify-between ">
+        <div className="lg:grid lg:grid-cols-7 lg:grid-rows-4 lg:gap-0 flex flex-col ">
+            <div className="lg:col-span-4 lg:row-span-2 bg-white flex flex-col lg:flex-row justify-between items-center h-fit py-10 lg:py-0">
               <Image src={P5} alt='Playstation 5'></Image> 
               {/* Text Div */}
               <div className="flex-col my-auto mr-36">
@@ -139,42 +145,51 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3  bg-[#EDEDED]  flex lg:flex-row flex-col justify-between">
-              <Image src={airpodMax} alt='Airpod Max'></Image> 
+            <div className="lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3  bg-[#EDEDED]  flex lg:flex-row flex-col justify-between items-center lg:h-full h-fit py-10 lg:py-0" >
+              <div>
+                <Image src={airpodMax} alt='Airpod Max' className="lg:flex hidden"></Image> 
+                <Image src={phoneMax} alt='Airpod Max' className="lg:hidden flex"></Image> 
+              </div>
+              
               {/* Text Div */}
               <div className="flex-col my-auto mr-16">
-              <ul className="list-none text-[40px] font-thin">
-                <li>Apple</li>
-                <li>Airpods</li>
-                <li className="font-semibold text-black block">Max</li>
+              <ul className="list-none text-[40px] font-thin flex lg:block">
+                <li className="mx-2 lg:mx-0">Apple</li>
+                <li className="mx-2 lg:mx-0">Airpods</li>
+                <li className="font-semibold text-black block mx-2 lg:mx-2">Max</li>
               </ul>
                <p className="text-[#909090]">Computational audio. Listen, it&apos;s powerful</p>
               </div>
             </div>
 
-            <div className="lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3   bg-[#353535]  text-white flex lg:flex-row flex-col justify-between">
-              <Image src={visionPro} alt='Vision Pro'></Image> 
+            <div className="lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3   bg-[#353535]  text-white flex lg:flex-row flex-col justify-between items-center lg:h-full h-fit py-10 lg:py-0">
+              <div>
+                <Image src={visionPro} alt='Vision Pro' className="lg:flex hidden"></Image> 
+                <Image src={phoneVision} alt='Vision Pro' className="lg:hidden flex"></Image> 
+              </div>
+              
               {/* Text Div */}
               <div className="flex-col my-auto mr-6">
-              <ul className="list-none text-[40px] font-thin">
-                <li>Apple</li>
-                <li>Airpods</li>
-                <li className="font-semibold  block">Max</li>
+              <ul className="list-none text-[40px] font-thin flex">
+                <li  className="mx-2 lg:mx-0">Apple</li>
+                <li className="lg:mx-0 mx-2">Vision</li>
+                <li className="font-semibold  block lg:mx-0 mx-2">Pro</li>
               </ul>
                 <p className="text-[#909090]">An immersive way to experience entertainment</p>
               </div>
             </div>
             
-            <div className="lg:col-span-3 lg:row-span-4 lg:col-start-5 lg:row-start-1 flex lg:flex-row flex-col-reverse justify-between bg-[#EDEDED] text-black">       
+            <div className="lg:col-span-3 lg:row-span-4 lg:col-start-5 lg:row-start-1 flex lg:flex-row flex-col-reverse justify-between bg-[#EDEDED] text-black items-center lg:h-full h-fit py-10 lg:py-0">       
             {/* Text Div */}
-            <div className="flex-col content-center ml-4">
+            <div className="flex-col content-center ml-4 lg:w-full w-[343px] text-center">
               {/* Main Text */}
               <p className="text-[72px] font-thin">Macbook<span className=" ml-5 font-bold">Air</span></p>
               <p className="opacity-40 text-[24px]">The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
 
-              <p className="border border-black w-[191px] h-[56px] text-center py-3 my-6 rounded-md">Shop Now</p>  
+              <p className="border border-black w-[191px] h-[56px] text-center py-3 my-6 rounded-md ml-16">Shop Now</p>  
             </div>
-            <Image src={macbookAir} alt='Macbook Air'></Image> 
+            <Image src={phoneMac} alt="Macbook Air" className="lg:hidden flex"></Image>
+            <Image src={macbookAir} alt='Macbook Air' className="lg:flex hidden"></Image> 
             </div>
         </div>
     
@@ -210,7 +225,7 @@ export default function Home() {
           <Image className="mx-4" src={headphone} alt="headphone" width={48} height={48}></Image>
           <p className="text-[16px]">Headphones</p>
         </li>
-        <li className=" h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl flex-col py-8 px-9  lg:mx-10 mx-auto w-fit row-start-3">
+        <li className=" h-[128x] w-[164px] lg:w-fit bg-[#EDEDED] rounded-xl flex-col py-8 px-9  lg:mx-10 mx-auto  row-start-3">
           <Image className="mx-4" src={computer} alt="computer" width={48} height={48}></Image>
           <p className="text-[16px]">Computers</p>
         </li>
@@ -245,7 +260,7 @@ export default function Home() {
 
       {/* Promotional */}
       <section>
-          <div className="flex justify-center">
+          <div className="flex flex-col justify-center items-center">
             {promotional.map((product, index) => (
               <div
                 key={index}
@@ -272,9 +287,11 @@ export default function Home() {
                 >
                   Shop Now
                 </button>
+                <Image src={pagination} alt='pagination' className="lg:hidden flex justify-center my-10"></Image>
               </div>
             ))}
           </div>
+
       </section>
 
 
@@ -283,13 +300,13 @@ export default function Home() {
         <p className=" m-8 text-[24px]">Discounts up to -50%</p>
         <div className="grid lg:grid-cols-4 lg:grid-rows-2 gap-4 w-[1120px] mx-auto grid-cols-2 grid-rows-2 ">
           {discounted.map((product, index) => (
-                <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-full h-fit' key={index}>
+                <div className='bg-[#F6F6F6] flex-col mx-auto my-auto p-8 w-full h-fit ' key={index}>
                  <Image src={product.hearted ? favFull : favBlank} alt='favorite icon' height={32} width={32} className=""/>
-                  <Image className="mx-auto " src={product.imgSrc} alt={product.name} height={160} width={160} />
+                  <Image className="mx-auto" src={product.imgSrc} alt={product.name} height={160} width={160} />
                   <p className="text-[16px] text-center">{product.name}</p>
                   <p className="text-[16px] text-center ">{product.description}</p>
                   <p className="text-[24px] font-bold text-center">${product.price}</p>
-                  <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 w-[188px] mx-auto ">Buy Now</button>
+                  <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 w-[188px] ml-36">Buy Now</button>
                 </div>
               ))}
         </div>
@@ -298,7 +315,7 @@ export default function Home() {
     
       <section className="lg:w-screen w-[1120px] mt-10 lg:mt-0 lg:relative lg:bottom-72">
       {/* Bottom Banner */}
-      <Image src={footerBanner} alt='footerBanner' className=""></Image>
+      <Image src={footerBanner} alt='footerBanner' className="w-full"></Image>
       {/* Footer */}
       <footer className="bg-black text-white">
         {/* Top Half */}
