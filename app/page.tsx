@@ -49,11 +49,11 @@ import pagination from "@/public/mobileResponsive/paginationpng.png"
 class Product {
   name: string;
   description: string;
-  price?: number;
-  hearted?: boolean;
-  imgSrc?: StaticImageData;
+  price: number;
+  hearted: boolean;
+  imgSrc: StaticImageData | string;
 
-  constructor(name: string, description: string, price?: number, hearted?: boolean, imgSrc?: StaticImageData) {
+  constructor(name: string, description: string, price: number, hearted: boolean, imgSrc: StaticImageData) {
     this.name = name;
     this.description = description;
     this.price = price;
@@ -306,7 +306,7 @@ export default function Home() {
                   <p className="text-[16px] text-center">{product.name}</p>
                   <p className="text-[16px] text-center ">{product.description}</p>
                   <p className="text-[24px] font-bold text-center">${product.price}</p>
-                  <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 w-[188px] ml-36">Buy Now</button>
+                  <button className="border border-black bg-black text-white rounded-md text-[14px] px-10 py-2 w-[188px] lg:ml-0 ml-36">Buy Now</button>
                 </div>
               ))}
         </div>

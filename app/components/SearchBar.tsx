@@ -8,10 +8,10 @@ import Image from "next/image"
 import burger from "@/public/mobileResponsive/burger.png"
 const SearchBar = () => {
   return (
-    <div className="flex items-center justify-between mx-10  lg:mx-48 my-10 w-full">
+    <div className="flex items-center lg:justify-evenly justify-between mx-10 lg:mx-0 my-10 lg:w-screen w-full">
       {/* Company Title */}
       <h3 className="lg:text-2xl text-3xl font-bold lg:mr-0">Company</h3>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 lg:hidden flex relative left-64">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 lg:hidden flex relative left-[30rem]">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
 
