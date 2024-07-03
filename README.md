@@ -1,6 +1,8 @@
 # Ecommerce Front-end Only
 
-Meant to represnet a ecommerce store home page
+Meant to represnet a ecommerce store home page.
+Base of this [Figma Design](https://www.figma.com/design/Oa3qAM7ivB0ClXo06UjSt8/E-Store---Mobile%2Fweb-(Community)?node-id=2619-1481&t=ACOCKkdA83tADVuN-1)
+(Note I did not create this from starch I very slight altered some text I found this online from a free resource)
 
 ## Features
 * Mobilbe Responsivity
